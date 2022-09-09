@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+
+}
+/*Variables generales*/
+:root {
+    --softblue: hsl(215,51%,70%);
+    --cyan: hsl(178, 100%, 50%);
+    --mainBG: hsl(217, 54%, 11%);
+    --cardBG: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    flex-direction: column;
+    height: 100vh; 
+    background: var(--mainBG);
+}
+li { list-style: none; }
+p {font-size: 18px;}
+
+/*Componente principal*/
+.component {
+    width: 20rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 1rem var(--cardBG);
+    background: var(--cardBG);
+}
+
+/*Imagen del producto*/
+.nftImage {
+    width: 18rem;
+    border-radius: 0.6rem;
+}
+
+/*Nombre del producto*/
+.nftName {
+    margin: 1rem 0;
+    font-size: 1.4em;
+    color: var(--white);
+}
+
+/*Descripcion del producto*/
+.nftDescription {
+    color: var(--softblue);
+}
+
+/*Precio y ultima actualizacion*/
+.nftDatas {
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 14px;
+}
+
+#price {color: var(--cyan);}
+#price::before {
+    margin: 0 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    content: url(./images/icon-ethereum.svg);
+}
+
+#clock {color: var(--softblue)}
+#clock::before {
+    margin: 0 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    content: url(./images/icon-clock.svg);
+}
+
+.line{
+    width: auto;
+    border-top: 1px solid var(--line);
+}
+
+/*Creador*/
+.nftUser {
+    justify-content: flex-start;
+}
+
+.nftUser > img {
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    width: 2rem;
+    margin: 0.8rem 1rem 0.5rem 0;
+}
+
+.nftUser > p > span {
+    color: var(--softblue);
+}
+.nftUser > p {
+    color: var(--white);
+}
+
+
+/*Pie de pagina*/
+.attribution { text-align: center; font-size: 18px; margin: 3rem 0 0 0}
+.attribution a { color: hsl(228, 45%, 44%); }
