@@ -1,109 +1,102 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Outfit', sans-serif;
-
-}
-/*Variables generales*/
 :root {
-    --softblue: hsl(215,51%,70%);
-    --cyan: hsl(178, 100%, 50%);
-    --mainBG: hsl(217, 54%, 11%);
-    --cardBG: hsl(216, 50%, 16%);
-    --line: hsl(215, 32%, 27%);
-    --white: hsl(0, 0%, 100%);
+  --very_dark_blue_main_BG: hsl(217, 54%, 11%);
+  --very_dark_blue_card_BG: hsl(216, 50%, 16%);
+  --very_dark_blue_line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+  --soft_blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 24px;
+  color: var(--white);
+}
+
+p,
+li {
+  color: var(--soft_blue);
+}
+
+li {
+  list-style: none;
 }
 
 body {
-    flex-direction: column;
-    height: 100vh; 
-    background: var(--mainBG);
-}
-li { list-style: none; }
-p {font-size: 18px;}
-
-/*Componente principal*/
-.component {
-    width: 20rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    box-shadow: 0 0 1rem var(--cardBG);
-    background: var(--cardBG);
+  height: 100vh;
+  background: var(--very_dark_blue_main_BG);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/*Imagen del producto*/
-.nftImage {
-    width: 18rem;
-    border-radius: 0.6rem;
+.card {
+  padding: 24px;
+  background: var(--very_dark_blue_card_BG);
+  border-radius: 16px;
+  width: 311px;
+  margin: 16px;
 }
 
-/*Nombre del producto*/
-.nftName {
-    margin: 1rem 0;
-    font-size: 1.4em;
-    color: var(--white);
+.ntf-img img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
 }
 
-/*Descripcion del producto*/
-.nftDescription {
-    color: var(--softblue);
+.ntf-title {
+  padding: 1rem 0;
 }
 
-/*Precio y ultima actualizacion*/
-.nftDatas {
-    justify-content: space-between;
-    margin: 1rem 0;
-    font-size: 14px;
+.ntf-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--very_dark_blue_line);
 }
 
-#price {color: var(--cyan);}
-#price::before {
-    margin: 0 0.5rem;
-    display: inline-block;
-    vertical-align: middle;
-    content: url(./images/icon-ethereum.svg);
+.price,
+.time {
+  vertical-align: super;
+  line-height: 18px;
 }
 
-#clock {color: var(--softblue)}
-#clock::before {
-    margin: 0 0.5rem;
-    display: inline-block;
-    vertical-align: middle;
-    content: url(./images/icon-clock.svg);
+.ntf-stats > .price {
+  color: var(--cyan);
+  font-weight: 600;
 }
 
-.line{
-    width: auto;
-    border-top: 1px solid var(--line);
+.price::before {
+  content: url(./images/icon-ethereum.svg);
+  margin: 0 8px;
 }
 
-/*Creador*/
-.nftUser {
-    justify-content: flex-start;
+.time::before {
+  content: url(./images/icon-clock.svg);
+  margin: 0 8px;
 }
 
-.nftUser > img {
-    border: 1px solid var(--white);
-    border-radius: 50%;
-    width: 2rem;
-    margin: 0.8rem 1rem 0.5rem 0;
+.ntf-creator {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
 }
 
-.nftUser > p > span {
-    color: var(--softblue);
-}
-.nftUser > p {
-    color: var(--white);
+.ntf-creator-img {
+  width: 36px;
+  border: 1px solid var(--white);
+  border-radius: 100%;
+  margin-right: 1rem;
 }
 
-
-/*Pie de pagina*/
-.attribution { text-align: center; font-size: 18px; margin: 3rem 0 0 0}
-.attribution a { color: hsl(228, 45%, 44%); }
+.ntf-name {
+  color: var(--white);
+}
