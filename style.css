@@ -32,18 +32,40 @@ li {
 body {
   height: 100vh;
   background: var(--very_dark_blue_main_BG);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
 }
 
 .card {
   padding: 24px;
   background: var(--very_dark_blue_card_BG);
   border-radius: 16px;
-  width: 311px;
+  width: 312px;
   margin: 16px;
+}
+
+.ntf-img {
+  position: relative;
+}
+
+.ntf-img:hover::after {
+  content: "";
+  border-radius: 8px;
+  background-color: aqua;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.ntf-img:hover::before {
+  content: url(./images/icon-view.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 .ntf-img img {
@@ -54,6 +76,13 @@ body {
 
 .ntf-title {
   padding: 1rem 0;
+}
+
+.ntf-title:hover,
+.ntf-name:hover,
+.ntf-img:hover {
+  cursor: pointer;
+  color: var(--cyan);
 }
 
 .ntf-stats {
@@ -74,18 +103,20 @@ body {
   font-weight: 600;
 }
 
+.time::before,
 .price::before {
-  content: url(./images/icon-ethereum.svg);
   margin: 0 8px;
 }
 
 .time::before {
+  content: url(./images/icon-ethereum.svg);
+}
+.time::before {
   content: url(./images/icon-clock.svg);
-  margin: 0 8px;
 }
 
 .ntf-creator {
-  margin-top: 1rem;
+  margin: 1rem 0 0 0;
   display: flex;
   align-items: center;
 }
